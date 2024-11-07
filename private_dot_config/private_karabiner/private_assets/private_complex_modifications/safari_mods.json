@@ -1,0 +1,99 @@
+{
+  "title": "Safari mods",
+  "rules": [
+    {
+      "description": "Remap ESC to Option-ESC in Safari only",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "escape"
+          },
+          "to": [
+            {
+                "key_code": "escape",
+                "modifiers": [
+                    "left_option"
+                ]
+            }
+          ],
+         "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.apple.Safari"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "hyper + e / r switches tabs in Safari",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "left_command",
+                "left_control",
+                "left_option"
+              ]
+            }
+          },
+          "to": [
+            {
+                "key_code": "left_arrow",
+                "modifiers": [
+                    "left_shift",
+                    "left_command"
+                ]
+            }
+        ],
+         "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.apple.Safari"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "left_command",
+                "left_control",
+                "left_option"
+              ]
+            }
+          },
+          "to": [
+            {
+                "key_code": "right_arrow",
+                "modifiers": [
+                    "left_shift",
+                    "left_command"
+                ]
+            }
+        ],
+         "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.apple.Safari"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

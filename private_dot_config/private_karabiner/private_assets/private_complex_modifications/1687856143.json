@@ -1,0 +1,1 @@
+{"title":"tmux hyper space mod","rules":[{"description":"change hyper space to ctrl-a so it can be used as tmux prefix key","manipulators":[{"type":"basic","from":{"modifiers":{"mandatory":["left_gui","left_control","left_alt","left_shift"]},"key_code":"spacebar"},"to":[{"repeat":true,"key_code":"a","modifiers":["left_control"]}]}]}]}
