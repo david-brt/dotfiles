@@ -1,19 +1,26 @@
 cmd - 1: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[0]')
-cmd -2: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]')
+cmd - 2: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[1]')
 cmd - 3: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[2]')
-cmd -4: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]')
+cmd - 4: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[3]')
 cmd - 5: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[4]')
-cmd -6: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]')
+cmd - 6: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[5]')
 cmd - 7: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[6]')
-cmd -8: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]')
-cmd -9: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]')
+cmd - 8: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[7]')
+cmd - 9: yabai -m space --focus $(yabai -m query --displays --display | jq -r '.spaces[8]')
+
+shift + cmd - 1: yabai -m window --space 1
+shift + cmd - 2: yabai -m window --space 2
+shift + cmd - 3: yabai -m window --space 3
+shift + cmd - 4: yabai -m window --space 4
+shift + cmd - 5: yabai -m window --space 5
+shift + cmd - 6: yabai -m window --space 6
+shift + cmd - 7: yabai -m window --space 7
+shift + cmd - 8: yabai -m window --space 8
+shift + cmd - 9: yabai -m window --space 9
 
 cmd - 0: yabai -m display --focus recent
 
 cmd + ralt - x: yabai -m space --focus recent && yabai -m space --destroy
-
-cmd - j: yabai -m window --focus prev
-cmd - k: yabai -m window --focus next
 
 shift + cmd - j: yabai -m window --swap prev
 shift + cmd - k: yabai -m window --swap next
@@ -23,6 +30,7 @@ shift + alt + cmd - f: yabai -m config layout float
 
 cmd - return: open -n -a kitty
 
+# tmux shortcuts using hyper key (see karabiner config)
 shift + alt + ctrl + cmd - t: tmux run-shell -b -t 1 t
 shift + alt + ctrl + cmd - 1: tmux select-window -t $(tmux list-sessions | sed -n '/(attached)/s/:.*//p'):1
 shift + alt + ctrl + cmd - 2: tmux select-window -t $(tmux list-sessions | sed -n '/(attached)/s/:.*//p'):2
