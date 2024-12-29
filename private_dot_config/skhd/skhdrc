@@ -28,13 +28,21 @@ shift + cmd - k: yabai -m window --swap next
 shift + alt + cmd - b: yabai -m config layout bsp
 shift + alt + cmd - f: yabai -m config layout float
 
-cmd - return: open -n -a kitty
+cmd - return: open -n -a open -a Ghostty.app
 
 # tmux shortcuts using hyper key (see karabiner config)
+
+# run sesh using hyper + t
 shift + alt + ctrl + cmd - t: tmux run-shell -b -t 1 t
+
+# remap prefix + command to hyper + command
+
 shift + alt + ctrl + cmd - 1: tmux select-window -t $(tmux list-sessions | sed -n '/(attached)/s/:.*//p'):1
 shift + alt + ctrl + cmd - 2: tmux select-window -t $(tmux list-sessions | sed -n '/(attached)/s/:.*//p'):2
 shift + alt + ctrl + cmd - 3: tmux select-window -t $(tmux list-sessions | sed -n '/(attached)/s/:.*//p'):3
 shift + alt + ctrl + cmd - 4: tmux select-window -t $(tmux list-sessions | sed -n '/(attached)/s/:.*//p'):4
 shift + alt + ctrl + cmd - 5: tmux select-window -t $(tmux list-sessions | sed -n '/(attached)/s/:.*//p'):5
 shift + alt + ctrl + cmd - 6: tmux select-window -t $(tmux list-sessions | sed -n '/(attached)/s/:.*//p'):6
+
+# l already occupied, use p ("previous") instead
+shift + alt + ctrl + cmd - p: tmux run-shell -b -t 1 "tmux switch-client -l"
