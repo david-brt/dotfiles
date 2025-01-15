@@ -28,7 +28,7 @@ shift + cmd - k: yabai -m window --swap next
 shift + alt + cmd - b: yabai -m config layout bsp
 shift + alt + cmd - f: yabai -m config layout float
 
-cmd - return: open -n -a open -a Ghostty.app
+cmd + shift - 0x32: open -n -a open -a Ghostty.app
 
 # tmux shortcuts using hyper key (see karabiner config)
 
